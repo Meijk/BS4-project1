@@ -33,14 +33,16 @@ body {
   opacity: 0.9;
 }
 
-#home-section .fas {
+#home-section .fas, 
+#borrow-section .fas {
   color: #FFC107;
   background: #fff;
   padding: 5px;
   border-radius: 5px;
 }
 
-#discover-section .fas, #borrow-section .fas {
+#discover-section .fas, 
+#contribute-section .fas {
   background: #333;
   color: #fff;
   padding: 5px;
