@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Bootstrap Theme</title>
 </head>
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home">
+
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
         <div class="container">
             <a href="index.html" class="navbar-brand">Brisbane<strong>Tool</strong>Library</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
@@ -28,13 +29,13 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#discover-head-section" class="nav-link">Discover</a>
+                        <a href="#discover-header-section" class="nav-link">Discover</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#borrow-head-section" class="nav-link">Borrow</a>
+                        <a href="#borrow-header-section" class="nav-link">Borrow</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contribute-head-section" class="nav-link">Contribute</a>
+                        <a href="#contribute-header-section" class="nav-link">Contribute</a>
                     </li>
                 </ul>
             </div>
@@ -303,6 +304,22 @@
     <script>
         //Get current year for footer copyright
         $('#year').text(new Date().getFullYear());
+
+        // Smooth Scrolling
+        $("#main-nav a").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            const hash = this.hash;
+
+            $('html, body').animate({
+            scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+            window.location.hash = hash;
+            });
+        }
+        });
     </script>
 </body>
 </html>
